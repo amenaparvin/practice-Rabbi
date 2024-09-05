@@ -44,7 +44,7 @@
         
     </script> -->
 
-
+<!-- 
         <h1>..</h1>
         <h1>..</h1>
         <h1>..</h1>
@@ -136,6 +136,28 @@
         let imgElement=document.getElementById("imgID")
         imgElement.src="image/light of.png"
 
+    }
+</script> -->
+
+
+<h1>0</h1>
+<button onclick="Plus()">+</button>
+<button onclick="Minus()">-</button>
+
+<script>
+    function Plus(){
+        let h1Element=document.getElementsByTagName('h1')[0]
+        let h1Value=parseInt(h1Element.innerText)
+        let newValue=h1Value+1
+        h1Element.innerText=newValue
+
+    }
+
+    function Minus(){
+        let h1Element=document.getElementsByTagName('h1')[0]
+        let h1Value=parseInt(h1Element.innerText)
+        let newValue=h1Value-1
+        h1Element.innerText=newValue
     }
 </script>
     
