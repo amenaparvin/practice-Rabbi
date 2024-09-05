@@ -102,10 +102,30 @@
     
     <button onclick="ON()">ON</button>
     <button onclick="OFF()">OFF</button>
+    
+    <button id="ToggleID" onclick="Toggle()"> Light OFF</button>
+    
 
 
 
 <script>
+
+    function Toggle(){
+        let imgElement=document.getElementById("imgID")
+        let toggleBtn=document.getElementById("ToggleID")
+        if (toggleBtn.innerText==="Light OFF"){
+            toggleBtn.innerText="Light ON"
+            imgElement.src="image/light on.webp"
+        }
+        else {
+            toggleBtn.innerText="Light OFF"
+            imgElement.src="image/light of.png"
+        }
+
+        // alert(imgElement.src)
+
+    }
+    
     function ON(){
         let imgElement=document.getElementById("imgID")
         imgElement.src="image/light on.webp"
