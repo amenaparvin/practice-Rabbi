@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="text">..</h1>
+    <!-- <h1 id="text">..</h1>
     <button onclick="ON()">ON</button>
     <button onclick="OFF()">OF</button>
 
@@ -19,6 +19,25 @@
     
         function OFF(){
             let text = document.getElementById("text")
+            text.innerText = "OFF"
+    
+        } -->
+
+        <h1 class="text">..</h1>
+        <h1 class="text">..</h1>
+        <h1 class="text">..</h1>
+    <button onclick="ON()">ON</button>
+    <button onclick="OFF()">OFF</button>
+
+    <script>
+        function ON(){
+            let text = document.getElementsByClassName("text")[0]
+            text.innerText = "ON"
+    
+        }
+    
+        function OFF(){
+            let text = document.getElementsByClassName("text")[0]
             text.innerText = "OFF"
     
         }
