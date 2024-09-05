@@ -6,18 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>On</h1>
-    <button onclick="ON">ON</button>
-    <button onclick="OFF">OF</button>
+    <h1 id="text">..</h1>
+    <button onclick="ON()">ON</button>
+    <button onclick="OFF()">OF</button>
+
+    <script>
+        function ON(){
+            let text = document.getElementById("text")
+            text.innerText = "ON"
+    
+        }
+    
+        function OFF(){
+            let text = document.getElementById("text")
+            text.innerText = "OFF"
+    
+        }
+    </script>
 </body>
 
-<script>
-    function ON(){
 
-    }
-
-    function OFF(){
-
-    }
-</script>
 </html>
