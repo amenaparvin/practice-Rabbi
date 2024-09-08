@@ -161,8 +161,11 @@
     }
 </script> -->
 
+<h1>0</h1>
+
 
 <button onclick="Add()">Add Number</button>
+
 
 <ul>
 
@@ -171,13 +174,24 @@
 <script>
     function Add(){
         // create A list Item
-        let date=new Date()
+
+        Plus()
         let Item=document.createElement("li");
-        Item.innerText=date.getMilliseconds()
+        let num=document.getElementsByTagName('h1')[0].innerText
+
+        Item.innerText=num
 
         let MyList=document.getElementsByTagName('ul')[0]
         MyList.appendChild(Item)
         
+    }
+
+    function Plus(){
+        let h1Element=document.getElementsByTagName('h1')[0]
+        let h1Value=parseInt(h1Element.innerText)
+        let newValue=h1Value+1
+        h1Element.innerText=newValue
+
     }
 
 
