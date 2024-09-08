@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <h1 id="myData"></h1>
+    <!-- <h1 id="myData"></h1>
     
 
 
@@ -20,6 +20,9 @@
         async function getProductListFromBackEnd(){
 
             try{
+
+                debugger;
+
                 let myData=document.getElementById("myData")
                 myData.innerText="loading......"
                 
@@ -45,6 +48,51 @@
 
 
 
+    </script> -->
+
+
+    <label for="">Product Name</label>
+    <input type="text" id="ProductName">
+    <br>
+    <br>
+    <label for="">Product Code</label>
+    <input type="text" id="ProductCode">
+    <br>
+    <br>
+    <label for="">Product Image</label>
+    <input type="text" id="ProductImage">
+    <br>
+    <br>
+    <label for="">Unit Price</label>
+    <input type="text" id="UnitPrice">
+    <br>
+    <br>
+    <label for="">Qty</label>
+    <input type="text" id="QTY">
+    <br>
+    <br>
+    <label for="">Total Price</label>
+    <input type="text" id="TotalPrice">
+    <br>
+    <br>
+
+    <button onclick="SendDatatoBackEnd">Submit</button>
+
+    <script>
+
+        async function SendDatatoBackEnd(){
+            let ProductName=document.getElementById("ProductName").value;
+            let ProductCode=document.getElementById("ProductCode").value;
+            let ProductImage=document.getElementById("ProductImage").value;
+            let UnitPrice=document.getElementById("UnitPrice").value;
+            let Qty=document.getElementById("Qty").value;
+            let TotalPrice=document.getElementById("TotalPrice").value;
+
+            let DataForSend=()
+
+        }
     </script>
+
+
 </body>
 </html>
