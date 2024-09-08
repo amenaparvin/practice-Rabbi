@@ -19,15 +19,25 @@
 
         async function getProductListFromBackEnd(){
 
-            let myData=document.getElementById("myData")
-            myData.innerText="loading......"
-            let URL="https://crud.teamrabbil.com/api/v1/ReadProduct"
+            try{
+                let myData=document.getElementById("myData")
+                myData.innerText="loading......"
+                
+                let URL="https://crud.teamrabbil.com/api/v1/ReadProduct"
+                let res=await fetch(URL)
+                let data=await res.json()
 
-            let res=await fetch(URL)
-            let data=await res.json()
+                
+                myData.innerText=JSON.stringify(data)
 
+
+            }catch(error){
+
+                let myData=document.getElementById("myData")
+                myData.innerText="Something Went Wrong"
+                console.log(error)
+            }
             
-            myData.innerText=JSON.stringify(data)
         }
 
 
