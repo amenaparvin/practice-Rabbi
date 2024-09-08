@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h1 id="myData"></h1>
     
 
 
@@ -17,10 +19,17 @@
 
         async function getProductListFromBackEnd(){
 
+            let myData=document.getElementById("myData")
+            myData.innerText="loading......"
             let URL="https://crud.teamrabbil.com/api/v1/ReadProduct"
 
-            await fetch(URL)
+            let res=await fetch(URL)
+            let data=await res.json()
+
+            
+            myData.innerText=JSON.stringify(data)
         }
+
 
 
 
