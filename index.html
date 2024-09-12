@@ -161,7 +161,7 @@
     }
 </script> -->
 
-<h1>0</h1>
+<!-- <h1>0</h1>
 
 
 <button onclick="Add()">Add Number</button>
@@ -193,6 +193,37 @@
         h1Element.innerText=newValue
 
     }
+
+
+    const readline = require('readline');
+
+// Setting up to read input from the user
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Function to calculate the distance between two points
+function calculateDistance(x1, y1, x2, y2) {
+    const distance = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+    return distance.toFixed(2);  // Return the result rounded to two decimal places
+}
+
+// Prompt the user to enter the coordinates of the two points
+rl.question("Enter the co-ordinates of the first point (x1 y1): ", (firstPoint) => {
+    const [x1, y1] = firstPoint.split(' ').map(Number); // Parse input as numbers
+    
+    rl.question("Enter the co-ordinates of the second point (x2 y2): ", (secondPoint) => {
+        const [x2, y2] = secondPoint.split(' ').map(Number); // Parse input as numbers
+        
+        const distance = calculateDistance(x1, y1, x2, y2);
+        console.log(`Distance: ${distance}`);
+
+        rl.close(); // Close the input stream
+    });
+}); -->
+<script>
+
 
 
 
