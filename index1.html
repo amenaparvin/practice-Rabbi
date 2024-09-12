@@ -39,7 +39,7 @@
         async function getList() {
             document.getElementById('loader').classList.remove('d-none')
 
-            let URL="http://164.68.107.70:6060/api/v1/CreateProduct/"
+            let URL="http://164.68.107.70:6060/api/v1/CreateProduct"
             let res=await axios.get(URL);
             document.getElementById('loader').classList.add('d-none')
 
@@ -59,6 +59,15 @@
                                 <td><button onclick="updateItem('${item['_id']}')"></button></td>
                         </tr>`)
                 })
+            }
+        }
+
+        async function deleteItem(id) {
+            let URL = `http://164.68.107.70:6060/api/v1/CreateProduct/${id}`
+            let res = await axios.get(URL);
+            if(res.status===200){
+                document.getElementById('itemList').innerHTML=""
+                await getList();
             }
         }
     </script>
