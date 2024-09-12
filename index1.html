@@ -27,13 +27,41 @@
                         <th>Delete</th>
                         <th>Update</th>
                     </tr>
-                    
-                    
                 </thead>
+                <tbody id="itemList"></tbody>
             </table>
         </div>
     </div>
     <script src="./axios.min.js"></script>
+
+    <script>
+
+        async function getList() {
+            document.getElementById('loader').classList.remove('d-none')
+
+            let URL="http://164.68.107.70:6060/api/v1/CreateProduct/"
+            let res=await axios.get(URL);
+            document.getElementById('loader').classList.add('d-none')
+
+
+            if(res.status===200){
+
+                let list= res.data['data'];
+
+                list.forEach((item)=>{
+                    document.getElementById('itemList').innerHTML+=(`<tr>
+                                <td>${item['ProductName']}</td>
+                                <td>${item['ProductCode']}</td>
+                                <td>${item['UnitPrice']}</td>
+                                <td>${item['Qty']}</td>
+                                <td>${item['TotalPrice']}</td>
+                                <td><button onclick="deleteItem('${item['_id']}')"></button></td>
+                                <td><button onclick="updateItem('${item['_id']}')"></button></td>
+                        </tr>`)
+                })
+            }
+        }
+    </script>
 
 
     
